@@ -1,0 +1,176 @@
+[
+ {
+   "district": "Blantyre",
+   "cases": 2029,
+   "deaths": 79,
+   "recoveries": 1876
+ },
+ {
+   "district": "Lilongwe",
+   "cases": 1398,
+   "deaths": 49,
+   "recoveries": 1171
+ },
+ {
+   "district": "Nkhata Bay",
+   "cases": 196,
+   "deaths": 2,
+   "recoveries": 193
+ },
+ {
+   "district": "Zomba",
+   "cases": 158,
+   "deaths": 7,
+   "recoveries": 144
+ },
+ {
+   "district": "Mangochi",
+   "cases": 155,
+   "deaths": 2,
+   "recoveries": 150
+ },
+ {
+   "district": "Dowa",
+   "cases": 95,
+   "deaths": 3,
+   "recoveries": 91
+ },
+ {
+   "district": "Karonga",
+   "cases": 91,
+   "deaths": 4,
+   "recoveries": 77
+ },
+ {
+   "district": "Nkhotakota",
+   "cases": 87,
+   "deaths": 1,
+   "recoveries": 84
+ },
+ {
+   "district": "Machinga",
+   "cases": 70,
+   "deaths": 0,
+   "recoveries": 69
+ },
+ {
+   "district": "Thyolo",
+   "cases": 70,
+   "deaths": 1,
+   "recoveries": 68
+ },
+ {
+   "district": "Mchinji",
+   "cases": 66,
+   "deaths": 5,
+   "recoveries": 46
+ },
+ {
+   "district": "Chitipa",
+   "cases": 64,
+   "deaths": 3,
+   "recoveries": 61
+ },
+ {
+   "district": "Neno",
+   "cases": 59,
+   "deaths": 0,
+   "recoveries": 58
+ },
+ {
+   "district": "Rumphi",
+   "cases": 56,
+   "deaths": 3,
+   "recoveries": 53
+ },
+ {
+   "district": "Dedza",
+   "cases": 54,
+   "deaths": 0,
+   "recoveries": 50
+ },
+ {
+   "district": "Ntcheu",
+   "cases": 53,
+   "deaths": 1,
+   "recoveries": 47
+ },
+ {
+   "district": "Kasungu",
+   "cases": 49,
+   "deaths": 1,
+   "recoveries": 38
+ },
+ {
+   "district": "Balaka",
+   "cases": 49,
+   "deaths": 1,
+   "recoveries": 45
+ },
+ {
+   "district": "Salima",
+   "cases": 47,
+   "deaths": 0,
+   "recoveries": 47
+ },
+ {
+   "district": "Chikwawa",
+   "cases": 44,
+   "deaths": 0,
+   "recoveries": 44
+ },
+ {
+   "district": "Mulanje",
+   "cases": 43,
+   "deaths": 1,
+   "recoveries": 37
+ },
+ {
+   "district": "Chiradzulu",
+   "cases": 37,
+   "deaths": 1,
+   "recoveries": 35
+ },
+ {
+   "district": "Nsanje",
+   "cases": 37,
+   "deaths": 1,
+   "recoveries": 31
+ },
+ {
+   "district": "Mwanza",
+   "cases": 27,
+   "deaths": 1,
+   "recoveries": 26
+ },
+ {
+   "district": "Phalombe",
+   "cases": 11,
+   "deaths": 1,
+   "recoveries": 8
+ },
+ {
+   "district": "Likoma",
+   "cases": 4,
+   "deaths": 2,
+   "recoveries": 2
+ },
+ {
+   "district": "Ntchisi",
+   "cases": 4,
+   "deaths": 0,
+   "recoveries": 3
+ },
+ {
+   "district": "Mwanza",
+   "cases": 204,
+   "deaths": 0,
+   "recoveries": 204
+ },
+ {
+   "district": "Mzimba",
+   "cases": 746,
+   "deaths": 16,
+   "recoveries": 683
+ }
+]
