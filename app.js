@@ -58,7 +58,7 @@ function getMore(e) {
 
       cases.forEach(function (number) {
         dataset += `<tr>
-                    <td>${number.district}</td>
+                    <td>${number.districts}</td>
                     <td>${number.cases}</td>
                     <td>${number.deaths}</td>
                     <td>${number.recoveries}</td>
