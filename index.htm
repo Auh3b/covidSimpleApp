@@ -9,26 +9,51 @@
       integrity="sha512-5fsy+3xG8N/1PV5MIJz9ZsWpkltijBI48gBzQ/Z2eVATePGHOkMIn+xTDHIfTZFVb9GMpflF2wOWItqxAP2oLQ=="
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="cases.js"></script>
+    <link rel="stylesheet" href="style.css" />
     <style></style>
     <title>Covid-19 Update</title>
   </head>
   <body>
     <div class="container">
-      <h2>Malawi Covid-19 Update</h2>
-      <button id="button">Today's Update</button>
-      <div class="container" id="content"></div>
+      <h2 class="title">Malawi Covid-19 Update</h2>
+      <div>
+        <button id="button" class="button-primary">Today's Update</button>
+        <div class="container" id="content"></div>
+      </div>
     </div>
     <br /><br />
     <div class="container">
       <button id="get-more">More Details..</button>
       <div class="container" id="table"></div>
     </div>
+    <div class="container">
+      <!-- get map button -->
+      <button id="get-map">Get Map</button>
+    </div>
+    <div class="container">
+      <!-- map container -->
+      <div id="mapid"></div>
+    </div>
     <br /><br />
     <footer>
       <div class="container">
+        <p class="disclaimer">
+          <b>Disclaimer:</b>
+          All data displayed is courtesy from
+          <a href="https://disease.sh/">NOVEL COVID19 API</a> and
+          <a href="https://malawipublichealth.org/">PHIM</a>
+        </p>
         <p class="u-full-width">&copy; PCK Data Analytics</p>
       </div>
     </footer>
     <script src="app.js"></script>
+    <script src="map.js"></script>
+    <script src="cases.js"></script>
   </body>
 </html>
