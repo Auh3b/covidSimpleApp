@@ -32,24 +32,24 @@ function loadMap() {
 
       function getColor(d) {
         return d > 2000
-          ? "#135E47"
+          ? "#0B4A5B"
           : d > 1000
-          ? "#31725E"
-          : d > 500
-          ? "#4E8675"
+          ? "#2A6170"
           : d > 100
-          ? "#6C9A8C"
+          ? "#487784"
           : d > 50
-          ? "#89AFA3"
-          : "#A7C3BA";
+          ? "#678E98"
+          : d > 25
+          ? "#85A5AD"
+          : "#A4BBC1";
       }
 
       function casesOptions(feature) {
         return {
-          color: "gray",
+          color: "#225B0B",
           fillColor: getColor(feature.properties.cases),
           weight: 0.5,
-          fillOpacity: 0.7,
+          fillOpacity: 0.8,
           dashArray: "1",
         };
       }
@@ -59,8 +59,7 @@ function loadMap() {
 
         layer.setStyle({
           weight: 2,
-          color: "#888",
-          fillOpacity: 0.7,
+          color: "#316D2E",
         });
 
         if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {

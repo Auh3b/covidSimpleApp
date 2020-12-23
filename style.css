@@ -61,18 +61,19 @@ button {
 #backer a:hover {
   background: var(--secondary-color);
   color: var(--primary-color);
+  border-color: #333;
 }
 
 /* map  */
 #mapid {
   margin: auto;
-  height: 50vh;
+  height: 55vh;
   width: 65vw;
 }
 
 .info {
   padding: 6px 8px;
-  font: 14px/16px Arial, Helvetica, sans-serif;
+  font: 14px/16px "Montserrat", sans-serif;
   background: white;
   background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -95,6 +96,7 @@ p {
 }
 
 .legend {
+  font-size: 1rem;
   line-height: 18px;
   color: #555;
 }
