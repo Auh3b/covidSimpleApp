@@ -39,7 +39,12 @@ button {
   color: #555;
 }
 
-footer {
+.disclaimer {
+  text-align: justify;
+  font-size: 1rem;
+}
+
+#pck p {
   text-align: center;
 }
 

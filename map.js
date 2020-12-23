@@ -32,16 +32,16 @@ function loadMap() {
 
       function getColor(d) {
         return d > 2000
-          ? "#004c4c"
+          ? "#135E47"
           : d > 1000
-          ? "#006666"
+          ? "#31725E"
           : d > 500
-          ? "#008080"
+          ? "#4E8675"
           : d > 100
-          ? "#66b2b2"
+          ? "#6C9A8C"
           : d > 50
-          ? "#b2d8d8"
-          : "#C0C0C0";
+          ? "#89AFA3"
+          : "#A7C3BA";
       }
 
       function casesOptions(feature) {
