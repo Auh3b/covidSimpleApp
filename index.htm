@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
@@ -13,17 +18,22 @@
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="cases.js"></script>
+    <script
+      src="https://kit.fontawesome.com/7fd4353ed5.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="style.css" />
     <style></style>
     <title>Covid-19 Update</title>
   </head>
   <body>
-    <div class="container">
+    <div id="home" class="container">
       <h2 class="title">Malawi Covid-19 Update</h2>
       <div>
-        <button id="button" class="button-primary">Today's Update</button>
+        <button id="button" class="b_primary">Today's Update</button>
         <div class="container" id="content"></div>
       </div>
     </div>
@@ -40,16 +50,25 @@
       <!-- map container -->
       <div id="mapid"></div>
     </div>
-    <br /><br />
     <footer>
       <div class="container">
         <p class="disclaimer">
           <b>Disclaimer:</b>
           All data displayed is courtesy from
-          <a href="https://disease.sh/">NOVEL COVID19 API</a> and
-          <a href="https://malawipublichealth.org/">PHIM</a>
+          <a
+            href="https://disease.sh/"
+            target="
+          _blank"
+            >NOVEL COVID19 API</a
+          >
+          and
+          <a href="https://malawipublichealth.org/" target="_blank">PHIM</a>,
+          and will be displayed when publicly available.
         </p>
         <p class="u-full-width">&copy; PCK Data Analytics</p>
+      </div>
+      <div id="backer">
+        <a href="#home"><i class="fas fa-angle-double-up fa-lg"></i></a>
       </div>
     </footer>
     <script src="app.js"></script>

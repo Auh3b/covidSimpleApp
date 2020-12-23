@@ -1,14 +1,32 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+:root {
+  --primary-color: #009999;
+  --secondary-color: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: "Montserrat", sans-serif;
-  background: #eceff1;
+  background: #fff;
 }
 
 /* main */
 .title {
   text-align: center;
   margin-bottom: 6rem;
+}
+
+button {
+  font-family: "Montserrat", sans-serif;
+}
+
+.b_primary {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border-color: var(--primary-color);
+  font-weight: lighter;
 }
 
 .disclaimer a {
@@ -19,6 +37,25 @@ body {
 
 .disclaimer a:hover {
   color: #555;
+}
+
+footer {
+  text-align: center;
+}
+
+#backer a {
+  background: var(--primary-color);
+  color: white;
+  border-radius: 5px;
+  padding: 1rem;
+  position: fixed;
+  bottom: 10px;
+  right: 50px;
+}
+
+#backer a:hover {
+  background: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 /* map  */

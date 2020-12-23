@@ -2,6 +2,7 @@ document.getElementById("button").addEventListener("click", update);
 
 document.getElementById("get-more").addEventListener("click", getMore);
 
+// get update
 function update(e) {
   const xhr = new XMLHttpRequest();
 
@@ -34,6 +35,7 @@ function update(e) {
   e.preventDefault();
 }
 
+// get table
 function getMore(e) {
   const xhr = new XMLHttpRequest();
 
@@ -75,3 +77,13 @@ function getMore(e) {
 
   e.preventDefault();
 }
+
+// scrolling
+$(document).scroll(function () {
+  var y = $(this).scrollTop();
+  if (y > 800) {
+    $("#backer a").fadeIn();
+  } else {
+    $("#backer a").fadeOut();
+  }
+});

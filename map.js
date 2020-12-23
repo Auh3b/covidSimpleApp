@@ -12,7 +12,7 @@ function loadMap() {
       // initiating map
       let mapOptions = {
         center: [-13.2512161, 34.3015278],
-        zoom: 7,
+        zoom: 6,
       };
 
       let map = new L.map("mapid", mapOptions);
@@ -120,7 +120,7 @@ function loadMap() {
 
       info.addTo(map);
 
-      let legend = L.control({ position: "bottomright" });
+      let legend = L.control({ position: "bottomleft" });
 
       legend.onAdd = function (map) {
         let div = L.DomUtil.create("div", "info legend"),
