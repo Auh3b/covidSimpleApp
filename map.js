@@ -107,7 +107,7 @@ function loadMap() {
           (props
             ? "<h5>" +
               "<b>" +
-              props.DISTRICT +
+              props.district +
               "</b></h5>" +
               `<p>Case: ${props.cases}` +
               "</p>" +

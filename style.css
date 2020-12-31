@@ -29,6 +29,11 @@ button {
   font-weight: lighter;
 }
 
+img {
+  height: 10px;
+  width: 15px;
+}
+
 .disclaimer a {
   font-weight: bold;
   text-decoration: none;
