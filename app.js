@@ -15,7 +15,7 @@ function update(e) {
   xhr.onload = function () {
     if (this.status === 200) {
       const data = JSON.parse(this.responseText);
-      console.log(data.countryInfo.flag);
+      console.log(data);
 
       const output = `
                 
