@@ -1,7 +1,3 @@
-document.getElementById("button").addEventListener("click", update);
-
-document.getElementById("get-more").addEventListener("click", getMore);
-
 // get update
 function update(e) {
   const xhr = new XMLHttpRequest();
@@ -19,11 +15,58 @@ function update(e) {
 
       const output = `
                 
-                <li>Country: ${data.country} <img src="${data.countryInfo.flag}"/> </li>
-                <li>Cases: ${data.cases}</li>
-                <li>Recovery: ${data.recovered}</li>
-                <li>Deaths: ${data.deaths}</li>
+                <div class="card"  >
+                  <h4  class="negative">
+                    Total Cases
+                  </h4>
+                  <p>
+                    ${data.cases}
+                    <span class="clr-neg">(
+                      <i class="fas fa-caret-up"></i>
+                      ${data.todayCases}
+                      )</span>
+                  </p>
+                </div>           
+
+                <div class="card" >
+                  <h4 class="negative">
+                    Active Cases
+                  </h4>
+                  <p>
+                    ${data.active} 
+                    <span class="clr-neg">(
+                    <i class="fas fa-caret-up"></i>
+                    ${data.todayCases}
+                    )</span>
+                  </p>
+                </div> 
+
+                <div class="card" >
+                  <h4 class="positive">
+                    Total Recovered
+                  </h4>
+                  <p>
+                    ${data.recovered}
+                    <span class="clr-pos">(
+                      <i class="fas fa-caret-up"></i>
+                      ${data.todayRecovered}
+                      )</span>
+                  </p>
+                </div>
                 
+                <div class="card" >
+                  <h4 class="negative">
+                    Total Deaths
+                  </h4>
+                  <p>
+                    ${data.deaths}
+                    <span class="clr-neg">(
+                      <i class="fas fa-caret-up"></i>
+                      ${data.todayDeaths}
+                      )</span>
+                  </p>
+                </div> 
+
                 `;
 
       document.getElementById("content").innerHTML = output;
@@ -34,6 +77,8 @@ function update(e) {
 
   e.preventDefault();
 }
+
+update();
 
 // get table
 function getMore(e) {

@@ -1,4 +1,4 @@
-document.getElementById("get-map").addEventListener("click", loadMap);
+// document.getElementById("get-map").addEventListener("click", loadMap);
 
 function loadMap() {
   const xhr = new XMLHttpRequest();
@@ -9,6 +9,7 @@ function loadMap() {
     if (this.status === 200) {
       // console.log(JSON.parse(this.responseText));
       let mapData = JSON.parse(this.responseText);
+      console.log(mapData.features);
       // initiating map
       let mapOptions = {
         center: [-13.2512161, 34.3015278],
@@ -18,11 +19,10 @@ function loadMap() {
       let map = new L.map("mapid", mapOptions);
 
       let layer = new L.TileLayer(
-        "http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png",
+        "http://tile.stamen.com/toner-lite/{z}/{x}/{y}.png",
         {
           attribution:
-            'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
-            'Imagery © <a href="https://www.wmflabs.org">WikiMediax</a>',
+            'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.',
           maxZoom: 8,
           minZoom: 6,
         }
@@ -56,6 +56,7 @@ function loadMap() {
 
       function highlightFeature(e) {
         let layer = e.target;
+        console.log(layer);
 
         layer.setStyle({
           weight: 2,
@@ -65,7 +66,21 @@ function loadMap() {
         if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
           layer.bringToFront();
         }
-        info.update(layer.feature.properties);
+        // info.update(layer.feature.properties);
+
+        let content = "";
+
+        content = `
+                    <div class="detailed">
+                      <p> ${layer.feature.properties.district}</p>
+                      <p>Cases:${layer.feature.properties.cases}</p>
+                      <p>Deaths${layer.feature.properties.deaths}</p>
+                      <p>Recoveries:${layer.feature.properties.recoveries}</p>
+                    
+                    </div>
+                    `;
+
+        document.querySelector(".content2").innerHTML = content;
       }
 
       let geojson;
@@ -76,7 +91,7 @@ function loadMap() {
 
       function resetHighlight(e) {
         geojson.resetStyle(e.target);
-        info.update();
+        // document.querySelector(".content2").innerHTML = "";
       }
 
       function onEachFeature(feature, layer) {
@@ -92,32 +107,6 @@ function loadMap() {
         onEachFeature: onEachFeature,
       }).addTo(map);
       // console.log(cases);
-
-      let info = L.control();
-
-      info.onAdd = function (map) {
-        this._div = L.DomUtil.create("div", "info");
-        this.update();
-        return this._div;
-      };
-
-      info.update = function (props) {
-        this._div.innerHTML =
-          "<h4>Malawi Covid-19 <br> Statistics</h4>" +
-          (props
-            ? "<h5>" +
-              "<b>" +
-              props.district +
-              "</b></h5>" +
-              `<p>Case: ${props.cases}` +
-              "</p>" +
-              `<p>Deaths: ${props.deaths}` +
-              "</p>" +
-              `<p>Recovery: ${props.recoveries}</p>`
-            : "Hover over district");
-      };
-
-      info.addTo(map);
 
       let legend = L.control({ position: "bottomleft" });
 
@@ -144,3 +133,5 @@ function loadMap() {
 
   xhr.send();
 }
+
+loadMap();
