@@ -1,10 +1,15 @@
 :root {
   --primary-color: #009999;
   --secondary-color: #fff;
+  --positive: #6cb560;
+  --negative: #e34040;
+  --text-light: #f4f4f4;
+  --text-dark: #444;
 }
 
 html {
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 body {
@@ -12,26 +17,69 @@ body {
   background: #fff;
 }
 
+/* utilities */
+.positive {
+  background: var(--positive);
+  color: var(--text-light);
+}
+
+.negative {
+  background: var(--negative);
+  color: var(--text-light);
+}
+
+.py-1 {
+  padding: 1rem 0.5rem;
+}
+.py-2 {
+  padding: 1.5rem 1rem;
+}
+.py-3 {
+  padding: 2rem 1.5rem;
+}
+
+.clr-pos {
+  color: var(--positive);
+  font-size: 1rem;
+}
+
+.clr-neg {
+  color: var(--negative);
+  font-size: 1rem;
+}
+
 /* main */
 .title {
   text-align: center;
-  margin-bottom: 6rem;
 }
 
 button {
   font-family: "Montserrat", sans-serif;
 }
 
-.b_primary {
-  background: var(--primary-color);
-  color: var(--secondary-color);
-  border-color: var(--primary-color);
-  font-weight: lighter;
+#content {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, 195px);
+  grid-template-rows: repeat(2, auto);
+  grid-gap: 2rem;
 }
 
-img {
-  height: 10px;
-  width: 15px;
+.card {
+  background: var(--secondary-color);
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.card h5 {
+  border-radius: 5px 5px 0 0;
+  margin-bottom: 0;
+}
+
+.card p {
+  margin: 0;
+  padding: 1rem 0;
 }
 
 .disclaimer a {
@@ -70,10 +118,9 @@ img {
 }
 
 /* map  */
-#mapid {
-  margin: auto;
+#map {
+  width: 55vw;
   height: 55vh;
-  width: 65vw;
 }
 
 .info {
@@ -114,9 +161,14 @@ p {
 }
 
 @media (max-width: 480px) {
-  #mapid {
-    width: 100%;
-    height: 90vh;
+  #content {
+    grid-template-columns: repeat(1, 200px);
+    grid-template-rows: repeat(4, 75px);
+  }
+
+  #map {
+    width: 80vw;
+    height: 75vh;
   }
 
   .info {

@@ -15,7 +15,14 @@ function loadMap() {
         zoom: 6,
       };
 
-      let map = new L.map("mapid", mapOptions);
+      let mapDiv = `
+                <div id="map" class="card" style=" margin: auto;">
+                </div>
+                `;
+
+      document.getElementById("mapid").innerHTML = mapDiv;
+
+      let map = new L.map("map", mapOptions);
 
       let layer = new L.TileLayer(
         "http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png",

@@ -1,5 +1,3 @@
-document.getElementById("button").addEventListener("click", update);
-
 document.getElementById("get-more").addEventListener("click", getMore);
 
 // get update
@@ -15,15 +13,61 @@ function update(e) {
   xhr.onload = function () {
     if (this.status === 200) {
       const data = JSON.parse(this.responseText);
-      console.log(data);
 
       const output = `
                 
-                <li>Country: ${data.country} <img src="${data.countryInfo.flag}"/> </li>
-                <li>Cases: ${data.cases}</li>
-                <li>Recovery: ${data.recovered}</li>
-                <li>Deaths: ${data.deaths}</li>
+                <div class="card"  >
+                  <h5  class="negative">
+                    Total Cases
+                  </h5>
+                  <p>
+                    ${data.cases}
+                    <span class="clr-neg">(
+                      <i class="fas fa-caret-up"></i>
+                      ${data.todayCases}
+                      )</span>
+                  </p>
+                </div>           
+
+                <div class="card" >
+                  <h5 class="negative">
+                    Active Cases
+                  </h5>
+                  <p>
+                    ${data.active} 
+                    <span class="clr-neg">(
+                    <i class="fas fa-caret-up"></i>
+                    ${data.todayCases}
+                    )</span>
+                  </p>
+                </div> 
+
+                <div class="card" >
+                  <h5 class="positive">
+                    Total Recovered
+                  </h5>
+                  <p>
+                    ${data.recovered}
+                    <span class="clr-pos">(
+                      <i class="fas fa-caret-up"></i>
+                      ${data.todayRecovered}
+                      )</span>
+                  </p>
+                </div>
                 
+                <div class="card" >
+                  <h5 class="negative">
+                    Total Deaths
+                  </h5>
+                  <p>
+                    ${data.deaths}
+                    <span class="clr-neg">(
+                      <i class="fas fa-caret-up"></i>
+                      ${data.todayDeaths}
+                      )</span>
+                  </p>
+                </div> 
+
                 `;
 
       document.getElementById("content").innerHTML = output;
@@ -32,8 +76,10 @@ function update(e) {
 
   xhr.send();
 
-  e.preventDefault();
+  // e.preventDefault();
 }
+
+update();
 
 // get table
 function getMore(e) {
@@ -43,8 +89,7 @@ function getMore(e) {
 
   xhr.onload = function () {
     if (this.status === 200) {
-      const cases = JSON.parse(this.responseText);
-      console.log(cases.features);
+      const table = JSON.parse(this.responseText);
       const output2 = `<table class = "u-full-width">
                   <thead>
                       <th>District</th>
@@ -58,7 +103,7 @@ function getMore(e) {
 
       let dataset = "";
 
-      cases.features.forEach(function (number) {
+      table.features.forEach(function (number) {
         dataset += `<tr>
                     <td>${number.properties.district}</td>
                     <td>${number.properties.cases}</td>
@@ -78,7 +123,7 @@ function getMore(e) {
   e.preventDefault();
 }
 
-// scrolling
+scrolling;
 $(document).scroll(function () {
   var y = $(this).scrollTop();
   if (y > 800) {
