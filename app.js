@@ -81,6 +81,15 @@ function update(e) {
 
 update();
 
+// add graph
+function getChart(e) {
+  let chart =
+    '<iframe width="950" height="600" frameborder="0" scrolling="no" src="//plotly.com/~robChiko/28.embed"></iframe>';
+
+  document.getElementById("chart").innerHTML = chart;
+}
+getChart();
+
 // get table
 function getMore(e) {
   const xhr = new XMLHttpRequest();
@@ -123,7 +132,7 @@ function getMore(e) {
   e.preventDefault();
 }
 
-scrolling;
+// scrolling
 $(document).scroll(function () {
   var y = $(this).scrollTop();
   if (y > 800) {

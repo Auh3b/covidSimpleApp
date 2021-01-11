@@ -116,7 +116,10 @@ button {
   color: var(--primary-color);
   border-color: #333;
 }
-
+/* chart */
+iframe {
+  margin: auto;
+}
 /* map  */
 #map {
   width: 55vw;
@@ -164,6 +167,10 @@ p {
   #content {
     grid-template-columns: repeat(1, 200px);
     grid-template-rows: repeat(4, 75px);
+  }
+
+  iframe {
+    display: none;
   }
 
   #map {
