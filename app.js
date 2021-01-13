@@ -13,6 +13,7 @@ function update(e) {
   xhr.onload = function () {
     if (this.status === 200) {
       const data = JSON.parse(this.responseText);
+      // console.log(data);
 
       const output = `
                 
@@ -82,13 +83,13 @@ function update(e) {
 update();
 
 // add graph
-function getChart(e) {
-  let chart =
-    '<iframe width="950" height="600" frameborder="0" scrolling="no" src="//plotly.com/~robChiko/28.embed"></iframe>';
+// function getChart(e) {
+//   let chart =
+//     '<iframe width="950" height="600" frameborder="0" scrolling="no" src="//plotly.com/~robChiko/28.embed"></iframe>';
 
-  document.getElementById("chart").innerHTML = chart;
-}
-getChart();
+//   document.getElementById("chart").innerHTML = chart;
+// }
+// getChart();
 
 // get table
 function getMore(e) {
@@ -99,6 +100,7 @@ function getMore(e) {
   xhr.onload = function () {
     if (this.status === 200) {
       const table = JSON.parse(this.responseText);
+      console.log(table);
       const output2 = `<table class = "u-full-width">
                   <thead>
                       <th>District</th>
