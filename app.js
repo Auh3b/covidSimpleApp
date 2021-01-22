@@ -13,7 +13,7 @@ function update(e) {
   xhr.onload = function () {
     if (this.status === 200) {
       const data = JSON.parse(this.responseText);
-      // console.log(data);
+      console.log(data);
 
       const output = `
                 
@@ -126,6 +126,8 @@ function getMore(e) {
 
       document.getElementById("table").innerHTML = output2;
       document.getElementById("cases").innerHTML = dataset;
+      document.getElementById("update-date").innerHTML =
+        "* <em>last updated 19/01/2021</em>";
     }
   };
 

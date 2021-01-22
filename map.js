@@ -38,15 +38,15 @@ function loadMap() {
       map.addLayer(layer);
 
       function getColor(d) {
-        return d > 2000
+        return d > 4000
           ? "#0A4154"
-          : d > 1000
+          : d > 2500
           ? "#295969"
-          : d > 100
+          : d > 1000
           ? "#47717F"
-          : d > 50
+          : d > 500
           ? "#668894"
-          : d > 25
+          : d > 250
           ? "#85A0AA"
           : "#A3B8BF";
       }
@@ -130,7 +130,7 @@ function loadMap() {
 
       legend.onAdd = function (map) {
         let div = L.DomUtil.create("div", "info legend"),
-          grades = [0, 50, 100, 500, 1000, 2000],
+          grades = [0, 250, 500, 1000, 2500, 4000],
           labels = [];
 
         for (var i = 0; i < grades.length; i++) {
