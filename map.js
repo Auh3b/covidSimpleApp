@@ -46,7 +46,7 @@ function loadMap() {
           ? "#47717F"
           : d > 500
           ? "#668894"
-          : d > 250
+          : d > 150
           ? "#85A0AA"
           : "#A3B8BF";
       }
@@ -130,7 +130,7 @@ function loadMap() {
 
       legend.onAdd = function (map) {
         let div = L.DomUtil.create("div", "info legend"),
-          grades = [0, 250, 500, 1000, 2500, 4000],
+          grades = [0, 150, 500, 1000, 2500, 4000],
           labels = [];
 
         for (var i = 0; i < grades.length; i++) {
