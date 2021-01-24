@@ -1,24 +1,20 @@
 document.getElementById("get-map").addEventListener("click", loadMap);
 
 function loadMap() {
-  const xhr = new XMLHttpRequest();
+  const mapUpdate = new Update();
 
-  xhr.open("GET", "covid_data.geojson", true);
-
-  xhr.onload = function () {
-    if (this.status === 200) {
-      // console.log(JSON.parse(this.responseText));
-      let mapData = JSON.parse(this.responseText);
-      // initiating map
+  mapUpdate
+    .get("covid_data.geojson")
+    .then((data) => {
       let mapOptions = {
         center: [-13.2512161, 34.3015278],
         zoom: 6,
       };
 
       let mapDiv = `
-                <div id="map" class="card" style=" margin: auto;">
-                </div>
-                `;
+                    <div id="map" class="card" style=" margin: auto;">
+                    </div>
+                    `;
 
       document.getElementById("mapid").innerHTML = mapDiv;
 
@@ -94,7 +90,7 @@ function loadMap() {
         });
       }
 
-      geojson = L.geoJSON(mapData, {
+      geojson = L.geoJSON(data, {
         style: casesOptions,
         onEachFeature: onEachFeature,
       }).addTo(map);
@@ -146,8 +142,6 @@ function loadMap() {
       };
 
       legend.addTo(map);
-    }
-  };
-
-  xhr.send();
+    })
+    .catch((err) => console.log(err));
 }
