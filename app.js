@@ -93,6 +93,9 @@ function getMore() {
       });
       document.getElementById("table").innerHTML = tableStr;
       document.getElementById("cases").innerHTML = tableData;
+
+      const updateDate = "Last Update:<em> 19/01/2021</em>";
+      document.getElementById("update-date").innerHTML = updateDate;
     })
     .catch((err) => console.log(err));
 }
