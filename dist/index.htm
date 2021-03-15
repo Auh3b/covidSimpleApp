@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+      integrity="sha512-5fsy+3xG8N/1PV5MIJz9ZsWpkltijBI48gBzQ/Z2eVATePGHOkMIn+xTDHIfTZFVb9GMpflF2wOWItqxAP2oLQ=="
+      crossorigin="anonymous"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Malawi Covid</title>
+  </head>
+  <body>
+    <header id="header-home">
+      <div class="container">
+        <h1 class="p-1">MALAWI COVID-19 UPDATE</h1>
+      </div>
+      <div class="bar"></div>
+      <div id="nav-bar">
+        <ul>
+          <li><button id="all" class="btn p-2">Malawi</button></li>
+          <li><button id="Northern" class="btn p-2">Northern</button></li>
+          <li><button id="Central" class="btn p-2">Central</button></li>
+          <li><button id="Southern" class="btn p-2">Southern</button></li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <div class="row">
+        <div id="kpis" class="section p-3 one-half column">
+          <div class="row">
+            <div id="active" class="kpi one-half column"></div>
+            <div id="total" class="kpi one-half column"></div>
+          </div>
+          <div class="row">
+            <div id="recoveries" class="kpi one-half column"></div>
+            <div id="deaths" class="kpi one-half column"></div>
+          </div>
+        </div>
+
+        <div
+          id="map"
+          class="section p-3 one-half column"
+          style="width: 45%; height: 300px"
+        ></div>
+      </div>
+      <div class="row">
+        <div id="table" class="section p-3 four columns">item</div>
+        <div id="graph" class="section p-3 eight columns">item</div>
+      </div>
+    </main>
+    <footer id="footer">
+      <p>Copyright &copy; PCK Data Analytics 2021</p>
+    </footer>
+    <script src="scripts/data.js"></script>
+    <script src="scripts/ui.js"></script>
+    <script src="scripts/map.js"></script>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>

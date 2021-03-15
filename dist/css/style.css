@@ -1,0 +1,128 @@
+:root {
+  --primary-color: #063846;
+  --secondary-color: #38606b;
+  --tertiary-color: #9bafb5;
+  --light-color: #f4f4f4;
+  --dark-color: #333;
+  --alt-color: #baa69a;
+  --gap-1: 0.5rem;
+  --gap-2: 1rem;
+  --gap-3: 2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* utilies */
+.p-1 {
+  padding: var(--gap-1);
+}
+.p-2 {
+  padding: var(--gap-2);
+}
+.p-3 {
+  padding: var(--gap-3);
+}
+
+.btn {
+  background: var(--tertiary-color);
+  width: 75px;
+  height: 75px;
+  margin: var(--gap-1);
+  color: var(--dark-color);
+  text-align: center;
+  font-size: 11px;
+}
+
+/* header */
+body {
+  background: var(--primary-color);
+  color: var(--light-color);
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  color: var(--alt-color);
+  font-size: 3.5rem;
+}
+
+.bar {
+  height: 10px;
+  background: var(--alt-color);
+}
+
+#nav-bar {
+  position: absolute;
+  top: 150px;
+  left: -15px;
+}
+
+ul {
+  list-style: none;
+}
+
+.selected {
+  background: var(--alt-color);
+  color: var(--light-color);
+}
+
+/* main */
+main {
+  /* display: grid;
+  grid-template-areas:
+    "kpis map"
+    "tables graph"; */
+  position: relative;
+  left: 100px;
+  max-width: 90vw;
+  grid-gap: var(--gap-1);
+  margin: var(--gap-1) 0;
+}
+#kpis {
+  grid-area: kpis;
+}
+
+#map {
+  grid-area: map;
+}
+
+#table {
+  grid-area: tables;
+}
+
+#graph {
+  grid-area: graph;
+}
+
+.section {
+  text-align: center;
+}
+
+/* kpis */
+.kpi {
+  border: var(--dark-color) solid 1px;
+  background: var(--secondary-color);
+}
+
+.kpi h6 {
+  background: var(--alt-color);
+}
+
+/* table */
+#table {
+  height: 250px;
+  overflow-y: hidden;
+}
+
+#table:hover {
+  overflow-y: scroll;
+}
+
+/* footer */
+footer {
+  text-align: center;
+  padding: var(--gap-2);
+}
