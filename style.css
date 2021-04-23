@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
 :root {
   --primary-color: #009999;
   --secondary-color: #fff;
@@ -7,25 +9,39 @@
   --text-dark: #444;
 }
 
+.navbar {
+  border-bottom: 3px solid var(--primary-color);
+  opacity: 0.9;
+}
+
+.leaflet-control-attribution {
+  opacity: 0;
+}
+
+.legendItem {
+  display: flex;
+  flex-direction: column;
+}
+
+#items {
+  margin-top: 70px;
+}
+table {
+  position: relative;
+}
+th {
+  position: sticky;
+  top: 0;
+}
+
 html {
   scroll-behavior: smooth;
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Open Sans", sans-serif;
   background: #fff;
-}
-
-/* utilities */
-.positive {
-  background: var(--positive);
-  color: var(--text-light);
-}
-
-.negative {
-  background: var(--negative);
-  color: var(--text-light);
 }
 
 .py-1 {
@@ -57,29 +73,11 @@ button {
   font-family: "Montserrat", sans-serif;
 }
 
-#content {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(2, 195px);
-  grid-template-rows: repeat(2, auto);
-  grid-gap: 2rem;
-}
-
-.card {
-  background: var(--secondary-color);
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  text-align: center;
-}
-
-.card h5 {
-  border-radius: 5px 5px 0 0;
-  margin-bottom: 0;
-}
-
-.card p {
-  margin: 0;
-  padding: 1rem 0;
+#table {
+  height: 80vh;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .disclaimer a {
@@ -102,13 +100,14 @@ button {
 }
 
 #backer a {
+  display: inline-block;
   background: var(--primary-color);
-  color: white;
-  border-radius: 5px;
-  padding: 1rem;
+  color: black;
+  border-radius: 100px;
+  padding: 0.4rem;
   position: fixed;
   bottom: 10px;
-  right: 50px;
+  right: 30px;
 }
 
 #backer a:hover {
@@ -122,8 +121,11 @@ iframe {
 }
 /* map  */
 #map {
-  width: 55vw;
-  height: 55vh;
+  width: 100%;
+  height: 100%;
+}
+.layerPopupInfo p {
+  margin: 0;
 }
 
 .info {
@@ -151,47 +153,35 @@ p {
 }
 
 .legend {
-  font-size: 1rem;
+  font-size: 0.5rem;
   line-height: 18px;
   color: #555;
 }
 .legend i {
   width: 18px;
-  height: 18px;
+  height: 5px;
   float: left;
   margin-right: 8px;
   opacity: 0.7;
 }
 
 @media (max-width: 480px) {
-  #content {
-    grid-template-columns: repeat(1, 200px);
-    grid-template-rows: repeat(4, 75px);
-  }
-
   iframe {
     display: none;
   }
 
   #map {
-    width: 80vw;
+    width: 100%;
     height: 75vh;
   }
 
-  .info {
-    font-size: 1.2rem;
+  table {
+    margin-top: 20px;
+    padding-left: 50px;
   }
 
-  .info h4 {
-    font-size: 1.4rem;
-    margin: 0 0 5px;
-    color: #777;
-  }
-  .info h5 {
-    font-size: 1.3 srem;
-    margin-bottom: 0.5rem;
-  }
   #backer a {
+    display: block;
     background: var(--primary-color);
     color: white;
     border-radius: 5px;

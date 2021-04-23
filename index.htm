@@ -5,54 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="covid, Covid-19,COVID19, Malawi, Update" />
     <meta name="description" content="Get Covid-19 updates for Malawi" />
-    <script src="https://d3js.org/d3.v4.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"
       rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
-      integrity="sha512-5fsy+3xG8N/1PV5MIJz9ZsWpkltijBI48gBzQ/Z2eVATePGHOkMIn+xTDHIfTZFVb9GMpflF2wOWItqxAP2oLQ=="
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script
-      src="https://kit.fontawesome.com/7fd4353ed5.js"
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
-    ></script>
+    />
     <link rel="stylesheet" href="style.css" />
     <style></style>
     <title>Covid-19 Update</title>
   </head>
-  <body>
-    <!-- daily update -->
-    <div id="home" class="container">
-      <h2 class="title">Malawi Covid-19 Update</h2>
-      <div class="container py-2" id="content"></div>
-      <p>*<em>updated daily</em></p>
-      <div id="chart"></div>
-    </div>
-    <!-- table -->
-    <div class="container" style="overflow-x: auto">
-      <button id="get-more">More Details..</button>
-      <div class="container" id="table"></div>
-      <p id="update-date"></p>
-    </div>
+  <body id="home">
+    <!-- nav -->
+    <nav class="navbar navbar-light bg-white sticky-top">
+      <div class="container">
+        <a href="#" class="navbar-brand">Malawi Covid-19 Update</a>
+      </div>
+    </nav>
 
-    <div class="container">
-      <!-- get map button -->
-      <button id="get-map">Get Map</button>
-    </div>
+    <!-- stats -->
+    <section id="stats" class="mt-2">
+      <div class="container">
+        <div class="card-deck text-center">
+          <div class="card">
+            <div class="card-header bg-warning text-white">
+              <p class="lead">Total Cases</p>
+            </div>
+            <div id="totalCases" class="card-block py-1"></div>
+          </div>
+          <div class="card">
+            <div class="card-header bg-warning text-white">
+              <p class="lead">Active Cases</p>
+            </div>
+            <div id="active" class="card-block py-1"></div>
+          </div>
+          <div class="card">
+            <div class="card-header bg-success text-white">
+              <p class="lead">Total Recovered</p>
+            </div>
+            <div id="recovery" class="card-block py-1"></div>
+          </div>
+          <div class="card">
+            <div class="card-header bg-danger text-white">
+              <p class="lead">Total Death</p>
+            </div>
+            <div id="deaths" class="card-block py-1"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- map container -->
-    <div id="mapid" class="py-2"></div>
+    <!-- section -->
+    <section id="items">
+      <div class="container my-1">
+        <div class="row">
+          <div id="mapid" class="col-lg-6 col-md-6"></div>
+          <div id="table" class="col-lg-6 col-md-6 p-0"></div>
+        </div>
+        <p class="updated lead"></p>
+      </div>
+    </section>
 
     <footer>
       <div class="container disclaimer">
@@ -79,14 +103,29 @@
         <p></p>
       </div>
       <div id="backer">
-        <a href="#home"><i class="fas fa-angle-double-up fa-lg"></i></a>
+        <a href="#home"><i class="fa fa-angle-double-up fa-lg"></i></a>
       </div>
       <div id="pck">
         <p class="u-full-width">Copyright &copy; PCK Data Analytics 2020</p>
       </div>
     </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
     <script src="covid.js"></script>
-    <script src="app.js"></script>
     <script src="map.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
