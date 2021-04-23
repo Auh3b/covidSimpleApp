@@ -56,7 +56,7 @@ update();
 const table = new Update();
 
 const tablelize = (data) => {
-  const tableStr = `<table class = "table table-striped table-responsive-sm mx-auto">
+  const tableStr = `<table class = "table table-striped table-responsive-sm mx-auto p-sm-0">
       <thead class="thead-dark">
           <th>District</th>
           <th>Active Cases</th>

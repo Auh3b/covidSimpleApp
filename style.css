@@ -177,11 +177,12 @@ p {
 
   table {
     margin-top: 20px;
-    padding-left: 50px;
+    padding-left: 0px;
+    font-size: 10px !important;
   }
 
   #backer a {
-    display: block;
+    display: none;
     background: var(--primary-color);
     color: white;
     border-radius: 5px;
