@@ -115,7 +115,6 @@ const renderMap = (data) => {
   };
 
   legend.addTo(map);
-  console.log(data);
 };
 
 const mapUpdate = new Update();

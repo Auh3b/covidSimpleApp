@@ -29,41 +29,16 @@
   </head>
   <body id="home">
     <!-- nav -->
-    <nav class="navbar navbar-light bg-white sticky-top">
+    <nav class="navbar sticky-top">
       <div class="container">
         <a href="#" class="navbar-brand">Malawi Covid-19 Update</a>
       </div>
     </nav>
 
-    <!-- stats -->
+    <!-- quick stats -->
     <section id="stats" class="mt-2">
       <div class="container">
-        <div class="card-deck text-center">
-          <div class="card">
-            <div class="card-header bg-warning text-white">
-              <p class="lead">Total Cases</p>
-            </div>
-            <div id="totalCases" class="card-block py-1"></div>
-          </div>
-          <div class="card">
-            <div class="card-header bg-warning text-white">
-              <p class="lead">Active Cases</p>
-            </div>
-            <div id="active" class="card-block py-1"></div>
-          </div>
-          <div class="card">
-            <div class="card-header bg-success text-white">
-              <p class="lead">Total Recovered</p>
-            </div>
-            <div id="recovery" class="card-block py-1"></div>
-          </div>
-          <div class="card">
-            <div class="card-header bg-danger text-white">
-              <p class="lead">Total Death</p>
-            </div>
-            <div id="deaths" class="card-block py-1"></div>
-          </div>
-        </div>
+        <div class="card-deck text-center"></div>
       </div>
     </section>
 
@@ -71,7 +46,9 @@
     <section id="items">
       <div class="container my-1">
         <div class="row">
+          <!-- table - section -->
           <div id="table" class="col-lg-6 col-md-6 p-sm-0"></div>
+          <!-- map - section -->
           <div id="mapid" class="col-lg-6 col-md-6"></div>
         </div>
         <p class="updated lead"></p>
@@ -106,13 +83,16 @@
         <a href="#home"><i class="fa fa-angle-double-up fa-lg"></i></a>
       </div>
       <div id="pck">
-        <p class="u-full-width">Copyright &copy; PCK Data Analytics 2020</p>
+        <p class="u-full-width">
+          Copyright &copy; PCK Data Analytics <span class="copy-date"></span>
+        </p>
       </div>
     </footer>
     <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
       crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     ></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"

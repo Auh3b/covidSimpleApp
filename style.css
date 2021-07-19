@@ -1,17 +1,51 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 
 :root {
-  --primary-color: #009999;
-  --secondary-color: #fff;
+  --primary-color: #136051;
+  --secondary-color: #2DDFBE;
   --positive: #6cb560;
   --negative: #e34040;
   --text-light: #f4f4f4;
   --text-dark: #444;
 }
 
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+body{
+  background: #F2FCFA;
+  font-family: "Open Sans", sans-serif;
+}
+
 .navbar {
-  border-bottom: 3px solid var(--primary-color);
-  opacity: 0.9;
+background: var(--primary-color);
+box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.3);
+}
+
+.navbar a{
+  color: var(--secondary-color);
+}
+
+.card{
+  background: #199F86 ;
+  border: 1px solid #0F5F50;
+  border-radius: 0;
+  color: #f4f4f4;
+}
+
+.card.card-activeCases{
+  background: #0F5F50;
+}
+
+.card .title{
+  color: #28FED6;
+}
+
+.card .stat{
+  font-size: 24px;
+  font-weight: 900;
 }
 
 .leaflet-control-attribution {
@@ -30,19 +64,11 @@ table {
   position: relative;
 }
 th {
+  background: var(--primary-color) !important;
   position: sticky;
   top: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Open Sans", sans-serif;
-  background: #fff;
-}
 
 .py-1 {
   padding: 1rem 0.5rem;
